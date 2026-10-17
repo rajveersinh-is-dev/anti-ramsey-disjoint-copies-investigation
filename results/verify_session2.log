@@ -1,0 +1,18 @@
+== 2K1,3_m10_p2.json ==
+  [INFO] m=10, pattern=2K1,3 (base K1,3, p=2), distinct colors=18, claimed=18, forbidden copies enumerated=25200, rainbow found=0
+  [INFO] color-class sizes (sorted desc) = [28, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+  [VERDICT PASS] 2K1,3_m10_p2.json
+== 2K3_m6_p2.json ==
+  [INFO] m=6, pattern=2K3 (base K3, p=2), distinct colors=11, claimed=11, forbidden copies enumerated=10, rainbow found=0
+  [INFO] color-class sizes (sorted desc) = [5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+  [VERDICT PASS] 2K3_m6_p2.json
+== 2K3_m7_p2.json ==
+  [INFO] m=7, pattern=2K3 (base K3, p=2), distinct colors=13, claimed=13, forbidden copies enumerated=70, rainbow found=0
+  [INFO] color-class sizes (sorted desc) = [9, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+  [VERDICT PASS] 2K3_m7_p2.json
+== K1,3_m10_p1.json ==
+  [INFO] m=10, pattern=K1,3 (base K1,3, p=1), distinct colors=6, claimed=6, forbidden copies enumerated=840, rainbow found=0
+  [INFO] color-class sizes (sorted desc) = [40, 1, 1, 1, 1, 1]
+  [VERDICT PASS] K1,3_m10_p1.json
+
+ALL CHECKS PASSED

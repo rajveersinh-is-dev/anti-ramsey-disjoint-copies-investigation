@@ -45,6 +45,16 @@ Hence Conjecture 3.2 must be read as: (★) holds for all *sufficiently large* m
 for all m in the dominant branch of the max in Theorem 3.1) iff G is a tree. We adopt the
 precise formulation below (F1/F2) and also study the exact range m ≥ p|V(G)|.
 
+**FURTHER CAVEAT (2026-10-17 evening, session 2).** The same mechanism fires much deeper
+than m = 6/2P₃: for G = K₁,₃ the (★)-formula is BELOW the paper's own Theorem 3.1 first
+term for 8 ≤ m ≤ 10 (16 > 11/13/14), and CP-SAT witnesses certify ar even higher
+(17, 17, 18). For k ≥ 4 the literal (★) is contradicted by Thm 3.1 + the star formula
+throughout a window m ≤ m*(k) ≈ 4k−2 (e.g. k = 4: m ≤ 14). The conjecture is therefore
+strictly an *eventual* claim, exactly as the paper's own remark ("we do not focus on
+cases when max{...} = first term") anticipates; the research content is (i) the eventual
+exactness threshold per (G, p), and (ii) the exact correction regime below it. See
+mathematics/smallm_2K1k.md and the revised F1/F2/F1′/F2′ in mathematics/definitions.md.
+
 ## Precise targets
 
 **F (corrected conjecture, full strength).**

@@ -57,17 +57,37 @@ exists. This is a *reformulation task*, not a claim we have proved in general.
 
 ## Our targets
 
-**F1 (tree branch, stars).** For every k ≥ 3 and every m ≥ 2(k+1):
-ar(m, 2K₁,ₖ) = ar(m−1, K₁,ₖ) + m − 1.
-Status of input data: ar(n, K₁,ₖ) is known exactly for n > k (Jiang [J02]); for
-n ≥ 3k−5, ar(n, K₁,ₖ) = ⌊n(k−2)/2⌋ + 1. So for large m, F1 is the closed-form claim
-ar(m, 2K₁,ₖ) = ⌊(m−1)(k−2)/2⌋ + m.
-Status: OPEN ATTEMPT; verified computationally for (k, m) ∈ {(3, 6..9), (4, 10)} (see
-results/), upper bound proved for m ≥ 69 by [GG17] Thm 3.5.
+**F1 (tree branch, stars) — REVISED 2026-10-17 evening.** For every k ≥ 3 and every
+m ≥ 2(k+1): ar(m, 2K₁,ₖ) = ar(m−1, K₁,ₖ) + m − 1. **Status: FALSIFIED in this literal
+form.** The lower-bound max{C(2k,2)+1, (★)} of [GG17, Thm 3.1] — combined with the
+exact star formula (Jiang / Montellano-Ballesteros; and [GG17] Thm 2.5 for k = 4:
+ar(m, K₁,₄) = m+1) — already exceeds the (★)-value at the boundary (see below), so
+(★) cannot hold there:
+   k = 3, m = 8: first term 16 > (★) = 11 (and CP-SAT: ar ≥ 17!)
+   k = 4, m = 10..14: first term 29 > (★) = 2m−1 (e.g. 29 > 19 at m = 10).
+Corrected target (F1′): exactness ar(m, 2K₁,ₖ) = (★) for all m ≥ m*(k), where
+m*(k) := min{m : ar(m−1, K₁,ₖ) + m − 1 ≥ C(2k,2)+1} (m*(3) = 11, m*(4) = 15,
+m*(5) = 19; the general formula is (★)(m) ≈ (k/2)m vs the constant C(2k,2)+1).
+Current evidence: F2 upper machinery (attack doc) gives (★) as an upper bound only
+from m ≥ 29 for k = 3 — the k ≥ 4 analogue is built in session 3+.
 
-**F2 (tree branch, k = 3, full range).** ar(m, 2K₁,₃) = ⌊(m−1)/2⌋ + m for all m ≥ 8.
-[GG17] proves this only for m ≥ 69 (their Thm 3.5). Our contribution (if it holds up
-under audit): a proof for 8 ≤ m ≤ 68, patching the only failing branch.
+**F2 (tree branch, k = 3, full range) — REVISED 2026-10-17 evening.** The original
+F2 ("= ⌊(m−1)/2⌋ + m for ALL m ≥ 8") is **FALSIFIED**: CP-SAT witnesses (independently
+exhaustive-checker-certified) give ar(8,2K₁,₃) ≥ 17 > 11, ar(9,2K₁,₃) ≥ 17 > 13,
+ar(10,2K₁,₃) ≥ 18 > 14; also [GG17] Thm 3.1's first term alone gives ≥ 16 > 14, 13, 11
+for m = 8..10 (PROVED HERE, mathematics/smallm_2K1k.md §2-A). Corrected target (F2′):
+split into
+   (a) exactness ar(m, 2K₁,₃) = ⌊(m−1)/2⌋ + m for all m ≥ 29 (lower: [GG17] Thm 3.1
+       second term + Jiang, PROVED HERE smallm_2K1k.md §2-B; upper: attack_2stars.md,
+       pending audit) — threshold improvement 69 → 29 over [GG17] Thm 3.5;
+   (b) the correction curve δ(m) = ar(m, 2K₁,₃) − ⌊(m−1)/2⌋ − m on the boundary window
+       8 ≤ m ≤ 28, currently measured δ(8) ≥ 6, δ(9) ≥ 4, δ(10) ≥ 4, δ(m) ≥ 0 for
+       m ≥ 11 with EXACT small values the session-3 target (18-kills at m = 8, 9;
+       19-kill at m = 10; exact climb at m = 11..14).
+Note the paper itself does not claim (★) in the max-dominant regime ("we do not
+focus on cases when max{...} = first term...", gg2017_text.txt lines 119–135); the
+literal statement is nonetheless falsifiable as shown, and our F2′ is the repair that
+matches the paper's evident intent.
 
 **F3 (non-tree branch).** For every connected non-bipartite G and every p ≥ 2:
 ar(m, pG) ≥ e(T_{χ(G)−1}(m)) + 1. In particular, when ar(m−1, G) is linear in m
