@@ -7,22 +7,37 @@ this keeps model B's "lo must be known-feasible" contract trivially satisfied.
 """
 from __future__ import annotations
 
+from pathlib import Path
 import json
 import sys
 import time
-from pathlib import Path
+
+from ar_exact import ar_by_search, star_edges
+
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from ar_exact import ar_by_search, star_edges
 
 RESULTS = ROOT / "results"
 WIT = RESULTS / "witnesses"
 WIT.mkdir(parents=True, exist_ok=True)
 
 
-def run_case(label, g_edges, m, n_copies, tlim):
+def run_case(label, g_edges, m, n_copies, tlim) -> tuple:
+    """Worker function for case.
+    
+    Args:
+        label:
+        g_edges:
+        m:
+        n_copies:
+        tlim:
+    
+    Returns:
+        tuple: Result of type tuple
+    
+    """
     t0 = time.perf_counter()
     val, wit, pl, pu = ar_by_search(list(g_edges), m, n_copies=n_copies,
                                     lo=1, time_limit=tlim, workers=4)
@@ -43,6 +58,9 @@ def run_case(label, g_edges, m, n_copies, tlim):
 
 
 def main() -> None:
+    """Entry point — parse arguments and run the main computation.
+    
+    """
     rows = []
     _, st3 = star_edges(3)
     _, st4 = star_edges(4)
