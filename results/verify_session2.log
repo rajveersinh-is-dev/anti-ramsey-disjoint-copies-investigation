@@ -1,22 +1,10 @@
-== K1,4_m7_p1.json ==
-  [INFO] m=7, pattern=K1,4 (base K1,4, p=1), distinct colors=8, claimed=8, forbidden copies enumerated=105, rainbow found=0
-  [INFO] color-class sizes (sorted desc) = [14, 1, 1, 1, 1, 1, 1, 1]
-  [VERDICT PASS] K1,4_m7_p1.json
-== K1,4_m8_p1.json ==
-  [INFO] m=8, pattern=K1,4 (base K1,4, p=1), distinct colors=9, claimed=9, forbidden copies enumerated=280, rainbow found=0
-  [INFO] color-class sizes (sorted desc) = [20, 1, 1, 1, 1, 1, 1, 1, 1]
-  [VERDICT PASS] K1,4_m8_p1.json
-== K1,4_m9_p1.json ==
-  [INFO] m=9, pattern=K1,4 (base K1,4, p=1), distinct colors=10, claimed=10, forbidden copies enumerated=630, rainbow found=0
-  [INFO] color-class sizes (sorted desc) = [27, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-  [VERDICT PASS] K1,4_m9_p1.json
-== K1,4_m10_p1.json ==
-  [INFO] m=10, pattern=K1,4 (base K1,4, p=1), distinct colors=11, claimed=11, forbidden copies enumerated=1260, rainbow found=0
-  [INFO] color-class sizes (sorted desc) = [35, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-  [VERDICT PASS] K1,4_m10_p1.json
-== K1,3_m10_p1.json ==
-  [INFO] m=10, pattern=K1,3 (base K1,3, p=1), distinct colors=6, claimed=6, forbidden copies enumerated=840, rainbow found=0
-  [INFO] color-class sizes (sorted desc) = [40, 1, 1, 1, 1, 1]
-  [VERDICT PASS] K1,3_m10_p1.json
+== 2K3_m8_p2.json ==
+  [INFO] m=8, pattern=2K3 (base K3, p=2), distinct colors=17, claimed=17, forbidden copies enumerated=280, rainbow found=0
+  [INFO] color-class sizes (sorted desc) = [12, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+  [VERDICT PASS] 2K3_m8_p2.json
+== 2K1,4_m10_p2.json ==
+  [INFO] m=10, pattern=2K1,4 (base K1,4, p=2), distinct colors=30, claimed=30, forbidden copies enumerated=3150, rainbow found=0
+  [INFO] color-class sizes (sorted desc) = [16, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+  [VERDICT PASS] 2K1,4_m10_p2.json
 
 ALL CHECKS PASSED

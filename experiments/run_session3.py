@@ -86,7 +86,7 @@ def main() -> None:
     rows.append(("2K1,3", 8, 2, "kill18", kill("2K1,3", st3, 4, 8, 2, 18, 1800)))
     rows.append(("2K1,3", 9, 2, "kill18", kill("2K1,3", st3, 4, 9, 2, 18, 1800)))
     rows.append(("2K1,3", 10, 2, "kill19", kill("2K1,3", st3, 4, 10, 2, 19, 1800)))
-    rows.append(("2K1,4", 10, 2, "kill30", kill("2K1,4", st4, 5, 10, 2, 30, 1800)))
+    rows.append(("2K1,4", 10, 2, "kill31", kill("2K1,4", st4, 5, 10, 2, 31, 1800)))
     rows.append(("2K3", 7, 2, "kill14", kill("2K3", tri, 3, 7, 2, 14, 900)))
     rows.append(("2K3", 8, 2, "kill18", kill("2K3", tri, 3, 8, 2, 18, 1800)))
 

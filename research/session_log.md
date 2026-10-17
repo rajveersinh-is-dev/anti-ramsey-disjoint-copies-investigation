@@ -47,9 +47,34 @@
    value is not tight at the boundary for triangles. ar(7, 2K₃) ≥ 13 certified
    (upper open). ar(7, 2P₃) = 7 EXACT (matches [GG17] Thm 3.3; regression ✓).
 
-### Open/running
-- ar(10, 2K₁,₄): running in session 2 (lo=19; expect ≥ 29 by §2-A analogue).
-- 18-infeasibility kills at m=8, 9; 19-kill at m=10: session 3.
+### Session-2 completes; session 3 opens (evening)
+
+Session-2 main finished:
+- ar(8, 2K₃) ≥ 17 certified (12-edge class + 16 singles; Prop C's ⌊m²/4⌋+1 = 17 met);
+  18-kill queued for EXACT 17.
+- **ar(10, 2K₁,₄) ≥ 30 certified** (3,150 copies; class of 16 edges + 29 singles):
+  the biock footprint — 16 = 2·8 — is EXACTLY the twin-block K_{2,8} at k=4, valid
+  at the boundary m = 10. **Self-correction recorded:** my earlier hand-sketch
+  claiming the twin-block is invalid for k ≥ 4 was WRONG (it miscounted mandatory
+  leaves: a star K₁,ₖ inside a (k+1)-vertex side spans ALL side vertices, so a
+  T-vertex inside the side is always a leaf ⟹ exactly one mono edge per star when
+  T is split, and both mono edges share the single color ⟹ union dies). Corrected
+  claim, PROVED-here-pending-audit: **the twin-block is valid at every boundary
+  m = 2(k+1), k ≥ 3, giving ar(2k+2, 2K₁,ₖ) ≥ C(2k,2) + 2** — one above [GG17]
+  Thm 3.1's first term (17 vs 16 at k=3; 30 vs 29 at k=4). Never written into the
+  docs (only in scratch), so no published correction needed — but the incident is
+  logged as evidence for the "verify every hand-check by brute force when
+  feasible" discipline.
+- U-glue extension (hand-checked, pending audit): the m=10 U-glue with
+  |A|=|R|=3 works for EVERY |U| = u ≥ 4: the two-star disjointness count needs ≥ 7
+  vertices of A∪R (always 6 ⟹ impossible), independent of u. ⟹ **ar(m, 2K₁,₃) ≥ 18
+  for ALL m ≥ 10** (constant-width family, no quadratic escape): ⟹ formula failures
+  extend to m = 11 (δ(11) ≥ 18 − 16 = 2) and m = 12 (δ(12) ≥ 18 − 17 = 1); from
+  m = 13 the second-term lower bound (F(m)) reclaims dominance and δ(m) ≥ 0 reopens.
+- Session-3 launched (boundary kills: 18 at m=8/9, 19 at m=10, 31 at 2K₁,₄ m=10,
+  14/18 at 2K₃ m=7/8; then exact-finding climbs at m = 11..14 with conditional
+  kills). Doc updates deferred until the audit subagent reports (avoid clobbering
+  `mathematics/smallm_2K1k.md` mid-audit).
 - Exact climb at m=11..14 (2K₁,₃) and 2K₁,₄ m=10 completion: session 3.
 - GLOBAL AUDIT (pending): attack_2stars.md thresholds m ≥ 29 (d=4..8 type tables)
   + proofs_thm31_and_thm36.md + smallm_2K1k.md §2: independent hostile-audit pass
