@@ -1,0 +1,427 @@
+===== PAGE 1 =====
+Opuscula Math. 37, no. 4 (2017), 567–575
+http://dx.doi.org/10.7494/OpMath.2017.37.4.567 Opuscula Mathematica
+ANTI-RAMSEY NUMBERS
+FOR DISJOINT COPIES OF GRAPHS
+Izolda Gorgol and Agnieszka Görlich
+Communicated by Ingo Schiermeyer
+Abstract. A subgraph of an edge-colored graph is calledrainbow if all of its edges have
+diﬀerent colors. For a graphG and a positive integern, the anti-Ramsey number ar(n, G)
+is the maximum number of colors in an edge-coloring ofKn with no rainbow copy ofH.
+Anti-Ramsey numbers were introduced by Erdős, Simonovits and Sós and studied in numerous
+papers. Let G be a graph with anti-Ramsey numberar(n, G). In this paper we show the lower
+bound for ar(n, pG), where pG denotes p vertex-disjoint copies ofG. Moreover, we prove
+that in some special cases this bound is sharp.
+Keywords: anti-Ramsey number, rainbow number, disjoint copies.
+Mathematics Subject Classiﬁcation:05C55, 05C15.
+1. INTRODUCTION
+A subgraph of an edge-colored graph is calledrainbow if all of its edges have diﬀerent
+colors. For a graphG and a positive integern, the anti-Ramsey number ar(n, G) is
+the maximum number of colors in an edge-coloring ofKn with no rainbow copy ofG.
+Anti-Ramsey numbers were introduced by Erdőset al. [4]. They showed that these
+are closely related to Turán numbers. Since then numerous results were established
+for a variety of graphsH, including among others cycles [1,11,13], matchings [5,9,17],
+trees [10,12] and cycles with an edge added [8,15]. The paper of Fujita, Magnant and
+Ozeki [6] presents the survey of results of that type.
+In this paper we consider the following problem. Given a connected graphG, the
+anti-Ramsey number ar(n, G), we ask what can be said aboutar(m, pG), where pG
+denotes p vertex-disjoint copies ofG. We give the lower bound for this number and
+discuss the sharpness of it. As far as we know the only considered graphs of this type
+were matchings.
+c≡ Wydawnictwa AGH, Krakow 2017 567
+===== PAGE 2 =====
+568 Izolda Gorgol and Agnieszka Görlich
+2. PRELIMINARIES
+Graphs considered below will always be simple. Throughout the paper we use the
+standard graph theory notation. For a graphG the order ofG is denoted by|G|and
+the size is denoted by‖G‖. Kn and pG stand for, respectively, the complete graph
+on n vertices and the disjoint union ofp copies of a graphG. A degree of a vertex
+v in a graph G is denoted by dG(v) and by NG(v) and NG[v] its open and closed
+neigborhoods, respectively. For a graphG and its subgraphH by G−H we mean
+a graph obtained from G by deleting all vertices ofH with all incident edges. If
+W⊆V (G), then G[W ] denotes the subgraph ofG induced by W. For a setS, by|S|
+we denote the cardinality ofS.
+Additionally, we introduce the following notation.C(G) is a set of colors used on
+the edges of a graphG, C(v) is a set of colors used on the edges incident to a vertex
+v and c(e) denotes a color of the edgee. For a given coloring of the edges ofKn we
+choose exactly one edge in each color. A subgraphF such thatV (F ) = V (Kn) induced
+by these edges we call aselective subgraph.
+We will need the following theorems.
+Theorem 2.1 ([4]). ar(m, K3) = m−1 for m≥3.
+Theorem 2.2 ([16]). If G is a graph with n≥3 vertices such that ‖G‖>
+(n−1
+2
+)
++ 1,
+then G has a Hamiltonian cycle.
+Theorem 2.3 ([13]). If m≥k≥3 and r is the reminder of the division m by k−1,
+then
+ar(m, Ck) =
+⌊m
+k−1
+⌋(k−1
+2
+)
++
+(r
+2
+)
++
+⌈m
+k−1
+⨁
+.
+Theorem 2.4 ([11,14]) . ar(m, K1,3) =⌊m
+2⌋+ 1, m≥4.
+Theorem 2.5 ([11,14]) . ar(m, K1,4) = m + 1, m≥5.
+3. LOWER BOUND
+Theorem 3.1. Let G be an arbitrary connected graph on n ≥3 vertices and
+m≥p|V (G)|. Then
+ar(m, pG)≥max
+{(pn−2
+2
+)
++ 1, ar(m−p + 1, G) + (p−1)m−
+(p
+2
+)}
+.
+Proof. We color the edges ofKm as follows. To obtain the ﬁrst number we choose
+Kpn−2 and color it rainbowly and we color the remaining edges with one extra color.
+In such a way we do not obtain any rainbowpG and use exactly
+(pn−2
+2
+)
++ 1 colors.
+To obtain the second number we chooseKp−1 and color it rainbowly, then we
+color the edges ofKm−Kp−1 with next ar(m−p + 1, G) colors without producing
+===== PAGE 3 =====
+Anti-Ramsey numbers for disjoint copies of graphs 569
+rainbow G and ﬁnally we color the remaining edges each with next distinct colors. In
+such a way we do not obtain any rainbowpG and use exactly
+ar(m−p + 1, G) + (p−1)(m−p + 1) +
+(p−1
+2
+)
+= ar(m−p + 1, G) + (p−1)m−
+(p
+2
+)
+colors, so the theorem is proved.
+It is worth to pay attention to the fact that the lower bound from Theorem 3.1 is
+not appropriate for a matching. In this case assumingG = K2 it is reasonable to put
+ar(m, K2) = 0. But in the construction of the coloring we must not use 0 colors on
+the rest of the graph. Similarly the colorings are based on the fact that by adding one
+new color we do not produce any copy ofG which is not true forG = K2. That is
+why matchings need a diﬀerent treating. It is done in [5,9,17] by using an appropriate
+Turán number.
+From this point of viewG = P3 is the smallest graph to consider.
+In our paper we are interested in selecting graphs for which this lower bound can
+be sharp. We do not focus on cases when
+max
+{(pn−2
+2
+)
++ 1, ar(m−p + 1, G) + (p−1)m−
+(p
+2
+)}
+=
+(pn−2
+2
+)
++ 1,
+since this can happen only for ﬁnitely many values ofm. It is so, as the ﬁrst expression
+is a constant and the second one is at least linear inm.
+We state the following conjecture.
+Conjecture 3.2. Let G be a connected graph on n≥3 vertices and m≥p|V (G)|.
+Then
+ar(m, pG) = ar(m−p + 1, G) + (p−1)m−
+(p
+2
+)
+if and only if G is a tree.
+In the next paragraphs we give the reasons which motivated us to state such
+a conjecture.
+3.1. DISJOINT PATHS
+It is easy to see that ar(m, P3) = 1 . By Theorem 3.1, it can be obtained that
+ar(m,2P3)≥m for m≥7 and ar(6,2P3)≥7. The next theorem shows that this
+lower bound is sharp. The result was also achieved by Bialostocki, Gilboa and Roditty
+[2], but with a diﬀerent method of the proof, so we put the theorem into the paper.
+Theorem 3.3.
+ar(m,2P3) =
+{
+7 for m = 6,
+m for m≥7.
+===== PAGE 4 =====
+570 Izolda Gorgol and Agnieszka Görlich
+Proof. The lower bound form≥7 results from Theorem 3.1. Form = 6 we color the
+edges of a subgraphK4 with distinct colors and all remaining edges ofK6 with one
+extra color.
+To show the upper bound we color the edges of a complete graphKm = K with
+m + 1 colors and assume that there is no rainbow2P3. By Theorem 2.1, there is
+a rainbow triangleT with vertices{u, v, w}. Let CR = C(K)\C(T ) and V (K−T ) =
+{x1, x2, . . . , xm−3}. Note that if there is an edgee∈E(K−T ) with c(e)∈CR, then
+we obtain a rainbow2P3 consisting of the edgee, an edgee′∈E(K−T ) incident to
+it and to edges fromE(T ) of colors diﬀerent fromc(e′). A contradiction. Hence we
+can assume that all edges of colors fromCR are placed betweenT and K−T.
+Since|CR|= m−2, at least one vertex fromT is joined to at least two vertices from
+K−T with edges of distinct colors fromCR. Letu be this vertex,c(ux1), c(ux2)∈CR,
+c(ux1)⁄= c(ux2) and C′
+R = CR\{c(ux1), c(ux2)}.
+Note that we can assume that for eachi∈{3, . . . , m−3}we have thatc(xiv)⁄∈C′
+R
+and c(xiw)⁄∈C′
+R, since otherwise there would be a rainbow2P3: x1ux2, xjvw (xjwv,
+respectively) for a certainj∈{3, . . . , m−3}. Since|C′
+R|= m−4, there is an edge of
+color from C′
+R between{x1, x2}and{v, w}. Let x1v be this edge. Similarly as above
+we obtain thatc(xiu)⁄∈C′
+R\{c(x1v)}for each i∈{3, . . . , m−3}, otherwise x2uxj,
+x1vw is a rainbow2P3 for certainj∈{3, . . . , m−3}. Now there are only two edges left
+(x2v and x2w) which are allowed to be colored with colors fromC′
+R\{c(x1v)}. But
+|C′
+R\{c(x1v)|= m−3. A contradiction form≥8. Form = 6,7,|C′
+R\{c(x1v)}|= 2,
+so surely x3x2w, ux1v is a rainbow2P3, remembering thatc(x2x3)∈C(T ).
+The next theorem deals with three copies ofP3. It is a special case of a more general
+the result obtained by Gilboa and Roditty [7], namelyar(m, pP3) = (p−1)(m−p
+2) + 1
+for m > 5p + 1. By a diﬀerent method of the proof, we managed to decrease the
+constraint for m from 16 to 12 forp = 3.
+Theorem 3.4. ar(m,3P3) = 2m−2 for m > 12.
+Proof. The lower bound results from Theorem 3.1. To show the upper bound we color
+the edges of a complete graphKm = K with 2m−1 colors arbitrarily and assume
+that there is no rainbow3P3.
+Let F be a selective subgraph ofK containing the longest cycle andl denote its
+length. Since|V (F )|= m and|E(F )|= 2m−1, such a selective subgraph can be
+chosen. Moreover, there are at most two vertex-disjoint cycles inF, since otherwise
+a rainbow 3P3 is in K.
+Note that ifl≥9, then obviously a rainbow3P3 is contained inK. Moreover, by
+Theorem 2.3, l≥5. Therefore l∈{5,6,7,8}. LetCl be the subgraph ofF being the
+longest cycle.
+Let Fl = F [V (Cl)], B = F−Cl, R = {vw : v ∈V (Cl), w∈V (B)}and
+N ={w∈V (B) : there exists v∈V (Cl) such that vw∈E(F )}. Note that
+‖F‖=‖Fl‖+‖B‖+|R|.
+===== PAGE 5 =====
+Anti-Ramsey numbers for disjoint copies of graphs 571
+Case 1. l = 8.
+Observe that|N|= 0, since otherwise a rainbow3P3 is in K.
+We show that there is at most one edge inB. Suppose that there are vertices
+x1, x2, x3, x4∈V (B) such thatx1x2, x3x4∈E(F ). Ifx2 = x3, thenx1x2x4 is rainbow.
+If x2⁄= x3, then at least one of pathsA1 = x1x2x3 or A2 = x4x3x2 is rainbow. Possibly
+deleting the edge with colorc(x2x3) inC8 we obtain a rainbow subgraph ofC8 which
+contains 2P3. It contradicts the assumption that there is no3P3 in F. Therefore,
+‖B‖≤1.
+Now, let e = xy be an edge in K such that x ∈V (C8) and y ∈V (B).
+Obviously, e ⁄∈E(F ) and c(e) is one of colors from C(C8). Then ‖F8‖ ≤23.
+Otherwise, deleting the edge with color c(e) in F8, by Theorem 2.2 we ob-
+tain a rainbow hamiltonian graph of order 8 without a color c(e) and join-
+ing e to the hamiltonian cycle we obtain a rainbow P9 in K and hence
+a rainbow 3P3 is in K. Hence,
+‖F‖=‖F8‖+‖B‖≤23 + 1 = 24 < 2m−1,
+a contradiction.
+Case 2. l = 7.
+Observe that|N|≤1. Otherwise it is easy to obtain3P3 in F.
+Analogously as in previous cases, we can show that‖B‖≤1.
+Suppose than that|N|= 0. So,‖F7‖≤21. Hence,
+‖F‖≤21 + 1 = 22 < 2m−1,
+a contradiction.
+Assume that|N|= 1 and N ={x}. Similarly as in a previous case, by Theorem 2.2,
+we obtain thatF [V (C7)∪{x}] contains at most 23 edges. Hence,
+‖F‖≤23 + 1 = 24 < 2m−1,
+a contradiction.
+Case 3. l = 6.
+Analogously as in Case 1, we can show that‖B‖≤1.
+Denote the consecutive vertices inC6 by{c0, c1, . . . , c5}and by dR(x) the number
+of edges inR incident with x. Observe that since‖B‖≤1, we have
+|R|≥2m−1−(15 + 1) = 2m−17≥m−4
+for every m > 12. It implies that|R|> 0 and there are at least two distinct vertices
+ci, cj such that dR(ci)≥1 and dR(cj)≥1. Without loss of generality, we can assume
+that dR(c0)≥2.
+The assumption thatdR(ck)≥1 for certain k∈{1,2,4,5}leads us to a contradic-
+tion with the assumption that there is no3P3 in F. Therefore c3 is the other vertex
+with neighbors inN and moreover dR(c3)≥2.
+If|N|≤3, then|R|≤6, a contradiction. So|N|≥4 which means that we can
+choose a rainbow2P3 in F with middle verticesc0 and c3 and endpoints inN.
+===== PAGE 6 =====
+572 Izolda Gorgol and Agnieszka Görlich
+The rainbow 3P3 in K we can ﬁnd as follows.
+If c(c1c4)⁄∈C(2P3), then we are done, since at least one of the pathsc5c4c1, c2c1c4
+is rainbow inK.
+So suppose thatc(c1c4)∈C(2P3). Without loss of generality letxc0y be one of
+above mentioned rainbow2P3 and c(c1c4) = c(xc0). Then the otherP3 with middle
+vertex c3, c2c1c4 and yc0c5 form a rainbow3P3 in K.
+Hence we obtain a contradiction.
+Case 4. l = 5.
+Denote the consecutive vertices inC5 by{c0, c1, . . . , c4}.
+Suppose that P3 = P is contained inB. Note that either one can ﬁnd rainbow2P3
+with one vertex inV (B)\V (P ) and ﬁve vertices inV (C5) or for eachu∈(V (B)\V (P ))
+we havec(uci) = c(ci+2 mod 5 ci+3 mod 5 ). In the latter case we have a rainbow2P3:
+c0u1c1, c2u2c3, where u1, u2∈(V (B)\V (P )). The rainbow2P3 forms a rainbow3P3
+with P. A contradiction.
+Therefore we can assume thatB = sK2∪(m−5−2s)K1.
+Note that each vertexu∈V (B) is adjacent to at most two vertices on the cycle
+(ci, ci+2 mod 5 ) otherwise F contains a longer cycle.
+Moreover, if at least oneu∈V (B) has two neighbors on the cycle, then‖F5‖≤8
+(ci+1 mod 5 ci+4 mod 5 ⁄∈E(F ), ci+1 mod 5 ci+3 mod 5 ⁄∈E(F ) ) otherwise F contains
+a longer cycle.
+Finally, note that if u1u2 ∈E(F ), then there are at most two edges between
+{u1, u2}and V (C5) otherwise F contains a longer cycle.
+Hence if at least oneu∈V (B) has two neighbors on the cycle, then
+2m−1 =‖F‖=‖F5‖+‖B‖+|R|≤8 + s + 2s + 2[(m−5)−2s] = 2m−s−2.
+A contradiction.
+If all u∈V (B) have at most one neighbor on the cycle, then
+2m−1 =‖F‖=‖F5‖+‖B‖+|R|≤10 + s + (m−5) = m + s + 5.
+Since s≤⌊m−5
+2 ⌋, we have a contradiction.
+Next we consider two copies of a star with three rays.
+Theorem 3.5. Let m≥69. Then ar(m,2K1,3) =⌊m−1
+2 ⌋+ m.
+Proof. The lower bound results from Theorems 3.1 and 2.4. To show the upper bound
+we color the edges of a complete graphKm = K with⌊m−1
+2 ⌋+ m + 1colors arbitrarily
+and assume that there is no rainbow2K1,3.
+Let F be a selective subgraph ofK chosen in such a way that the maximal degree
+∆( F ) is as big as possible and letx0 be the vertex ofK such that d(x0) = ∆( F ) = d.
+Note that, since⌊m−1
+2 ⌋+ m + 1 > m + 1 = ar(m, K1,4) (see Theorem 2.5), we
+can assume that d≥4. Obviously d≤m−1. Let NF (x0) = {x1, x2, . . . , xd}and
+V (F )\NF [x0] ={xd+1, xd+2, . . . , xm−1}. The latter set is empty ifd = m−1.
+Let us consider the cased≥8 ﬁrstly. LetF−= F−x0. Note that
+‖F−‖≥‖F‖−(m−1) =
+⌊m−1
+2
+⌋
++ m + 1−(m−1) =
+⌊m−1
+2
+⌋
++ 2. (3.1)
+===== PAGE 7 =====
+Anti-Ramsey numbers for disjoint copies of graphs 573
+Since|F−|= m−1, we obtain thatK1,2⊂F−. Without loss of generality let
+x1x2x3 be this star with the centerx1. Note that there is no other edges with the end
+x1 in F−otherwise there would be rainbow2K1,3 in F (one star with centerx1 and
+one with x0).
+Moreover, note thatG−does not contain two edge-disjoint starsK1,2. If x1x2x3
+and xixjxk be such a stars with centersx1 and xi, respectively, then at least one of
+the stars x1x2x3xi or xixjxkx1 would be rainbow inK and form a rainbow2K1,3
+together with a certain star with a centerx0, even ifc(x1xi)∈C(x0). Therefore G−is
+a subset of (i)K1,2∪⌊m−4
+2 ⌋K2 or (ii) P4∪⌊m−5
+2 ⌋K2 or (iii) K3∪⌊m−4
+2 ⌋K2. In case
+(i) we have‖F−‖≤2 +⌊m−4
+2 ⌋=⌊m
+2⌋and in case (ii)‖F−‖≤3 +⌊m−5
+2 ⌋=⌊m+1
+2 ⌋,
+which is a contradiction to (3.1). There is no similar contradicion in case (iii) only
+in case F−≃K3∪⌊m−4
+2 ⌋K2. In that case let x1, x2, x3 be the vertices of the
+triangle and xixj be an edge of F−, i, j⁄∈{x1, x2, x3}. Now we look at colors of
+the edges in K. If c(x1xi)⁄∈{c(x1x2), c(x1x3)}or c(x2xi)⁄∈{c(x2x1), c(x2x3)}or
+c(x3xi) ⁄∈ {c(x3x2), c(x3x1)}, then we have a rainbow star K1,3 with a centrum
+xs for a certain s∈{1,2,3}which forms a rainbow2K1,3 with the rainbow K1,3
+with a centrumx0. Therefore we can assume thatc(x1xi)∈{c(x1x2), c(x1x3)}and
+c(x2xi)∈{c(x2x1), c(x2x3)}and c(x3xi)∈{c(x3x2), c(x3x1)}. So there is a rainbow
+star K1,3 xixsxtxj with a centrumxi for a certains, t∈{1,2,3}. So again we have
+the rainbow 2K1,3 with the rainbowK1,3 with a centrumx0. A contradiction.
+Now consider the case 4 ≤d ≤7. Note that each xi, i = 1 ,2, . . . , dcan
+have at most two neighbors in{xd+1, xd+2, . . . , xm−1}otherwise we can easily ﬁnd
+2K1,3 in F. So there is at mostd + 2d +
+(d
+2
+)
+edges with at least one endpoint in
+{x0, x1, x2, . . . , xd}. Hence at least⌊m−1
+2 ⌋+ m + 1−3d−
+(d
+2
+)
+edges have both end-
+points in{xd+1, xd+2, . . . , xm−1}. Note that at least one of these vertices has three
+neighbors in this set, since
+⌊m−1
+2
+⌋
++ m + 1−3d−
+(d
+2
+)
+> 2(m−d−1)/2
+for m≥69. So again we have2K1,3 in F. A contradiction.
+3.2. DISJOINT TRIANGLES
+It is unlikely that the lower bound we discuss is sharp in any case. By the results
+of Erdőset al. [3,4], it follows that ifG is a graph which is not bipartite and does
+not become bipartite after deleting a single edge, thenar(m, G) and ex(m,G−) are
+asymptotically equal, whereex(m,H) denotes well known Turán number for a family
+H andG−is the family of all graphs obtained fromG by deleting one edge. Moreover,
+recently Schiermeyer and Sótak [18] showed that for a graphG with cyclomatic number
+at least 2 the anti-Ramsey numberar(m, G) cannot be bounded above by a function
+which is linear inm.
+As an example we present the following theorem.
+Theorem 3.6. Let m≥6. Then ar(m,2K3)≥⌊m2
+4⌋+ 1.
+===== PAGE 8 =====
+574 Izolda Gorgol and Agnieszka Görlich
+Proof. To construct an appropriate coloring of the edges ofKm we proceed as follows.
+We choose a triangle-free subgraphH with maximum possible number of edges (Turán
+graph) and assign to each edge a diﬀerent color. Then we put one extra color to all
+remaining edges. Certainly, by the Turán theorem,|E(H)|=⌊m2
+4⌋. Obviously, there
+is no rainbow2K3 in such a coloring, hence the proof is completed.
+REFERENCES
+[1] N. Alon, On the conjecture of Erdős, Simonovits and Sós concerning anti-Ramsey
+theorems, J. Graph Theory7 (1983), 91–94.
+[2] A. Bialostocki, S. Gilboa, Y. Roditty,Anti-Ramsey numbers of small graphs , Ars Combin.
+123, 41–53.
+[3] P. Erdős, M. Simonovits,A limit theorem in graph theory , Studia Sci. Math. Hungar.1
+(1966), 51–57.
+[4] P. Erdős, M. Simonovits, V. Sós,Anti-Ramsey theorems, [in:] A. Hajnal, R. Rado, V. Sós
+(eds), Inﬁnite and ﬁnite sets, Colloq. Math. Soc. J. Bolyai, North-Holland, 1973, 633–643.
+[5] S. Fujita, A. Kaneko, I. Schiermeyer, K. Suzuki,A rainbow k-matching in the complete
+graph with r colors, Electron. J. Combin.16 (2009), 51.
+[6] S. Fujita, C. Magnant, K. Ozeki,Rainbow generalizations of Ramsey theory: A survey ,
+Graphs Combin.26 (2010), 1–30.
+[7] S. Gilboa, Y. Roditty,Anti-Ramsey numbers of graphs with small connected components ,
+Graphs Combin.32 (2016), 649–662.
+[8] I. Gorgol,On rainbow numbers for cycles with pendant edges , Graphs Combin.24 (2008),
+327–331.
+[9] R. Haas, M. Young,The anti-Ramsey number of perfect matching , Discrete Math.312
+(2012), 933–937.
+[10] T. Jiang, Edge-colorings with no large polychromatic stars , Graphs Combin.18 (2002),
+303–308.
+[11] T. Jiang, D.B. West,On the Erdős-Simonovits-Sós conjecture about the anti-Ramsey
+number of a cycle , Combin. Probab. Comput.12 (2003), 585–598.
+[12] T. Jiang, D.B. West,Edge-colorings of complete graphs that avoid polychromatic trees ,
+Discrete Math.274 (2004), 137–145.
+[13] J.J.Montellano-Ballesteros,V.Neuman-Lara, An anti-Ramsey theorem on cycles,Graphs
+and Combinatorics21 (2005), 343–354.
+[14] J.J. Montellano-Ballesteros, On totally multicolored stars , J. Graph Theory51 (2006),
+225–243.
+[15] J.J. Montellano-Ballesteros, Totally multicolored diamonds , Electron. Notes Discrete
+Math. 30 (2008), 231–236.
+[16] O. Ore, Arc coverings of graphs , Ann. Math. Pure Appl.55 (1961), 315–321.
+===== PAGE 9 =====
+Anti-Ramsey numbers for disjoint copies of graphs 575
+[17] I. Schiermeyer, Rainbow numbers for matchings and complete graphs , Discrete Math.
+286 (2004), 157–162.
+[18] I. Schiermeyer, R. Soták,Rainbow numbers for graphs containing small cycles , Graphs
+Combin. 31 (2015) 1985–1991.
+Izolda Gorgol
+i.gorgol@pollub.pl
+Lublin University of Technology
+Department of Applied Mathematics
+Nadbystrzycka 38D, 20-618 Lublin, Poland
+Agnieszka Görlich
+forys@agh.edu.pl
+AGH University of Science and Technology
+Faculty of Applied Mathematics
+al. A. Mickiewicza 30, 30-059 Krakow, Poland
+Received: March 10, 2016.
+Revised: July 20, 2016.
+Accepted: August 6, 2016.
