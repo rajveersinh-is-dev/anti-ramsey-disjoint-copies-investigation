@@ -1,22 +1,39 @@
 """Session 2: exact ar values via feasibility climbing (model B, src/ar_exact.py)."""
 from __future__ import annotations
 
+from pathlib import Path
 import json
 import sys
 import time
-from pathlib import Path
+
+from ar_exact import ar_by_search, star_edges, path_edges, triangle_edges
+
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from ar_exact import ar_by_search, star_edges, path_edges, triangle_edges
 
 RESULTS = ROOT / "results"
 WIT = RESULTS / "witnesses"
 WIT.mkdir(parents=True, exist_ok=True)
 
 
-def run_case(label, g_edges, m, g_n, n_copies, lo, tlim):
+def run_case(label, g_edges, m, g_n, n_copies, lo, tlim) -> tuple:
+    """Worker function for case.
+    
+    Args:
+        label:
+        g_edges:
+        m:
+        g_n:
+        n_copies:
+        lo:
+        tlim:
+    
+    Returns:
+        tuple: Result of type tuple
+    
+    """
     t0 = time.perf_counter()
     val, wit, pl, pu = ar_by_search(list(g_edges), m, g_n=g_n, n_copies=n_copies,
                                     lo=lo, time_limit=tlim)
@@ -36,6 +53,9 @@ def run_case(label, g_edges, m, g_n, n_copies, lo, tlim):
 
 
 def main() -> None:
+    """Entry point — parse arguments and run the main computation.
+    
+    """
     rows = []
     _, tri = triangle_edges()
     _, st3 = star_edges(3)

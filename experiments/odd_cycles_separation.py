@@ -15,9 +15,10 @@ positive (for the monotonicity statement used in Theorem D).
 """
 from __future__ import annotations
 
-import csv
 from math import comb, floor, ceil
 from pathlib import Path
+import csv
+
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "results" / "odd_cycles_separation.csv"
@@ -32,10 +33,22 @@ def ar_cycle(n: int, k: int) -> int:
 
 
 def lb_two_cycles(m: int) -> int:
+    """Lb two cycles.
+    
+    Args:
+        m:
+    
+    Returns:
+        The computed result
+    
+    """
     return m * m // 4 + 1
 
 
 def main() -> None:
+    """Entry point — parse arguments and run the main computation.
+    
+    """
     rows = []
     tolerance_collapsed = True
     for cycle_len in (3, 5, 7, 9):

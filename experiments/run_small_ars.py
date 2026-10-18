@@ -9,15 +9,17 @@ Witnes colorings are stored in results/witnesses/ as JSON.
 """
 from __future__ import annotations
 
+from pathlib import Path
 import json
 import sys
 import time
-from pathlib import Path
+
+from ar_exact import ar_exact, star_edges, path_edges, triangle_edges
+
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from ar_exact import ar_exact, star_edges, path_edges, triangle_edges, describe_coloring
 
 RESULTS = ROOT / "results"
 WIT = RESULTS / "witnesses"
@@ -25,6 +27,20 @@ WIT.mkdir(parents=True, exist_ok=True)
 
 
 def run_case(label: str, g_edges, m: int, g_n: int, n_copies: int, tlim: float):
+    """Worker function for case.
+    
+    Args:
+        label:
+        g_edges:
+        m:
+        g_n:
+        n_copies:
+        tlim:
+    
+    Returns:
+        tuple: Result of type tuple
+    
+    """
     t0 = time.perf_counter()
     best, witness, status = ar_exact(
         list(g_edges), m, g_n=g_n, n_copies=n_copies, time_limit=tlim
@@ -46,6 +62,9 @@ def run_case(label: str, g_edges, m: int, g_n: int, n_copies: int, tlim: float):
 
 
 def main() -> None:
+    """Entry point — parse arguments and run the main computation.
+    
+    """
     rows = []
     _, tri = triangle_edges()
     _, st3 = star_edges(3)

@@ -15,22 +15,38 @@ Every returned witness/value is verified by src/verify_witness.py afterwards.
 """
 from __future__ import annotations
 
+from pathlib import Path
 import json
 import sys
 import time
-from pathlib import Path
+
+from ar_exact import ar_by_search, ar_feasible, star_edges, triangle_edges
+
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from ar_exact import ar_by_search, ar_feasible, star_edges, triangle_edges
 
 RESULTS = ROOT / "results"
 WIT = ROOT / "results" / "witnesses"
 WIT.mkdir(parents=True, exist_ok=True)
 
 
-def save_wit(label, m, n_copies, val, status, wit):
+def save_wit(label, m, n_copies, val, status, wit) -> str:
+    """Save wit to file.
+    
+    Args:
+        label:
+        m:
+        n_copies:
+        val:
+        status:
+        wit:
+    
+    Returns:
+        str: Result of type str
+    
+    """
     if not wit:
         return
     tag = f"{label}_m{m}_p{n_copies}".replace("(", "").replace(")", "").replace(" ", "")
@@ -43,7 +59,7 @@ def save_wit(label, m, n_copies, val, status, wit):
     return str(path.name)
 
 
-def kill(label, g_edges, g_n, m, n_copies, t, tlim, workers=12):
+def kill(label, g_edges, g_n, m, n_copies, t, tlim, workers=12) -> tuple:
     """Try to prove ar < t (infeasibility).  Returns (proven, seconds)."""
     t0 = time.perf_counter()
     sat, wit, st = ar_feasible(list(g_edges), m, g_n=g_n, n_copies=n_copies,
@@ -64,7 +80,23 @@ def kill(label, g_edges, g_n, m, n_copies, t, tlim, workers=12):
     return False, dt
 
 
-def climb(label, g_edges, g_n, m, n_copies, lo, tlim, workers=8):
+def climb(label, g_edges, g_n, m, n_copies, lo, tlim, workers=8) -> tuple:
+    """Climb.
+    
+    Args:
+        label:
+        g_edges:
+        g_n:
+        m:
+        n_copies:
+        lo:
+        tlim:
+        workers (int):
+    
+    Returns:
+        tuple: Result of type tuple
+    
+    """
     t0 = time.perf_counter()
     val, wit, pl, pu = ar_by_search(list(g_edges), m, g_n=g_n, n_copies=n_copies,
                                     lo=lo, time_limit=tlim, workers=workers)
@@ -76,6 +108,9 @@ def climb(label, g_edges, g_n, m, n_copies, lo, tlim, workers=8):
 
 
 def main() -> None:
+    """Entry point — parse arguments and run the main computation.
+    
+    """
     _, st3 = star_edges(3)
     _, st4 = star_edges(4)
     _, tri = triangle_edges()

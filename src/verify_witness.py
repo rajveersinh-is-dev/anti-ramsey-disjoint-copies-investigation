@@ -18,14 +18,24 @@ Usage:  python -X utf8 src/verify_witness.py <witness.json> [...]
 
 from __future__ import annotations
 
-import json
-import sys
 from collections import Counter
 from itertools import combinations
 from pathlib import Path
+import json
+import sys
+
 
 
 def complete_edges(m: int) -> set[tuple[int, int]]:
+    """Complete edges.
+    
+    Args:
+        m:
+    
+    Returns:
+        The computed result
+    
+    """
     return {(i, j) for i in range(m) for j in range(i + 1, m)}
 
 
@@ -63,8 +73,8 @@ def forbidden_copies(m: int, base: str, n_copies: int):
     out = []
     if n_copies == 1:
         return [es for es, _ in unit]
-    for i in range(len(unit)):
-        ea, va = unit[i]
+    for i, item in enumerate(unit):
+        ea, va = item
         for j in range(i + 1, len(unit)):
             eb, vb = unit[j]
             if va & vb:
@@ -74,6 +84,15 @@ def forbidden_copies(m: int, base: str, n_copies: int):
 
 
 def verify(path: Path) -> tuple[bool, str]:
+    """Check whether the condition holds.
+    
+    Args:
+        path:
+    
+    Returns:
+        tuple: Result of type tuple
+    
+    """
     data = json.loads(path.read_text(encoding="utf-8"))
     m = data["m"]
     label = data["label"]
@@ -129,6 +148,9 @@ def verify(path: Path) -> tuple[bool, str]:
 
 
 def main() -> None:
+    """Entry point — parse arguments and run the main computation.
+    
+    """
     args = sys.argv[1:]
     if not args:
         print(__doc__)

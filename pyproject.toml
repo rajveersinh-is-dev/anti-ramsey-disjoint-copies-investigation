@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "anti_ramsey_disjoint_copies_investigation"
+version = "1.0.0"
+description = "Autonomous investigation of Gorgol-Gorlich Conjecture 3.2 (anti-Ramsey numbers for disjoint copies): proofs, exact CP-SAT experiments, hostile audits. Falsified small-m regime; eventual-exactness threshold improved 69 -> 29 (pending audit)."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    {name = "rajveersinh-is-dev"},
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Libraries :: Python Modules"
+]
+
+[project.urls]
+Homepage = "https://github.com/rajveersinh-is-dev/anti-ramsey-disjoint-copies-investigation"
+
+[tool.setuptools]
+py-modules = ['']

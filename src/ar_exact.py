@@ -39,19 +39,36 @@ copy cannot exist for lack of vertices), which is handled by convention here.
 
 from __future__ import annotations
 
-import json
-import time
 from itertools import combinations, permutations
-from pathlib import Path
 
 from ortools.sat.python import cp_model
 
 
+
+
 def complete_edges(n: int) -> list[tuple[int, int]]:
+    """Complete edges.
+    
+    Args:
+        n:
+    
+    Returns:
+        The computed result
+    
+    """
     return [(i, j) for i in range(n) for j in range(i + 1, n)]
 
 
 def _canon(edges) -> tuple:
+    """Canon.
+    
+    Args:
+        edges:
+    
+    Returns:
+        tuple: Result of type tuple
+    
+    """
     return tuple(sorted(tuple(sorted(e)) for e in edges))
 
 
@@ -185,11 +202,26 @@ def star_edges(k: int) -> tuple[int, list[tuple[int, int]]]:
 
 
 def path_edges(n_vertices: int) -> tuple[int, list[tuple[int, int]]]:
+    """Path edges.
+    
+    Args:
+        n_vertices:
+    
+    Returns:
+        tuple: Result of type tuple
+    
+    """
     n = n_vertices
     return n, [(i, i + 1) for i in range(n - 1)]
 
 
 def triangle_edges() -> tuple[int, list[tuple[int, int]]]:
+    """Triangle edges.
+    
+    Returns:
+        tuple: Result of type tuple
+    
+    """
     return 3, [(0, 1), (0, 2), (1, 2)]
 
 
@@ -306,11 +338,3 @@ def ar_by_search(g_edges, m: int, g_n: int | None = None, n_copies: int = 2,
                 last_sat is not None, False
     return (hi - 1 if hi <= E else E), best_wit, True, hi <= E
 
-    """Human-readable color classes."""
-    classes: dict[int, list] = {}
-    for e, c in sorted(coloring.items(), key=lambda kv: (kv[1], kv[0])):
-        classes.setdefault(c, []).append(e)
-    out = [f"#classes={len(classes)}"]
-    for c in sorted(classes):
-        out.append(f"  color {c}: {classes[c]}")
-    return "\n".join(out)
